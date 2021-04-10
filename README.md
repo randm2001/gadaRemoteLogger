@@ -1,2 +1,2 @@
-# remoteLogger
+# gadaRemoteLogger
 Remote log for server side apps

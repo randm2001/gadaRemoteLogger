@@ -12,7 +12,7 @@ var gadaRemoteLogger=function gadaRemoteLogger(config) {
     console.log((new Date()) + ' Server is listening on port '+config.serverPort);
   });
 
-  wsServer = new WebSocketServer({
+  var wsServer = new WebSocketServer({
     httpServer: server,
     autoAcceptConnections: false
   });
@@ -34,8 +34,9 @@ var gadaRemoteLogger=function gadaRemoteLogger(config) {
       console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
     });
   });
+  this.logAll=function(msg) {
+    wsServer.broadcast(msg)
+  }
 }
-gadaRemoteLogger.prototype.logAll=function (msg) {
-  wsServer.broadcast(msg)
-}
+
 module.exports=gadaRemoteLogger;

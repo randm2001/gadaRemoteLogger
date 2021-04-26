@@ -1,6 +1,6 @@
 {
   "name": "gadaremotelogger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GADA remote logger",
   "main": "index.js",
   "scripts": {
